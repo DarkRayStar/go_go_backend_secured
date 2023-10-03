@@ -14,7 +14,8 @@ const userSchema = new mongoose.Schema({
 	email: { type: String, required: true },
 	password: { type: String, required: true },
 	image: { type: String, required: true },
-	registeredDate: { type: Date, required: true}
+	registeredDate: { type: Date, required: true},
+	userRole: { type: String, required: true },
 
 });
 
@@ -43,7 +44,8 @@ const validate = (data) => {
 		district: Joi.string().required().label("District"),
 		password: passwordComplexity().required().label("Password"),
 		image: Joi.string().required().label("Image URL"),
-		registeredDate: Joi.date().required().label("Registered Date")
+		registeredDate: Joi.date().required().label("Registered Date"),
+		userRole: Joi.string().required().label("userRole")
 	});
 	return schema.validate(data);
 };
