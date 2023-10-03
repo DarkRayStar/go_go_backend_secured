@@ -66,6 +66,7 @@ router.route('/update-profile/:id').post((req, res) => {
 			userDetails.zipCode = req.body.zipCode;
 			userDetails.district = req.body.district;
 			userDetails.image = req.body.image;
+			userDetails.userRole = req.body.userRole;
 
 			userDetails.save()
 				.then(() => res.json('User Profile Successfully updated'))
