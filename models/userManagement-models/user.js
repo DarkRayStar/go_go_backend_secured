@@ -45,7 +45,7 @@ const validate = (data) => {
 		password: passwordComplexity().required().label("Password"),
 		image: Joi.string().required().label("Image URL"),
 		registeredDate: Joi.date().required().label("Registered Date"),
-		userRole: Joi.string().required().label("userRole"),
+		userRole: Joi.string().required().label("userRole")
 	});
 	return schema.validate(data);
 };
