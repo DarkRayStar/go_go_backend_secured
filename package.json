@@ -28,7 +28,7 @@
     "joi": "^17.6.0",
     "joi-password-complexity": "^5.1.0",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^6.5.3",
+    "mongoose": "^6.11.3",
     "nodemailer": "^6.7.8",
     "nodemon": "^2.0.16",
     "stripe": "^9.1.0"
