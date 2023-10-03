@@ -33,6 +33,19 @@ router.route('/get-all').get((req, res) => {
 		.catch(err => res.status(400).json('Error: ' + err));
 });
 
+router.route('/find-by-email/:email').get((req, res) => {
+	const userEmail = req.params.email;
+  
+	User.findOne({ email: userEmail })
+	  .then(userDetails => {
+		if (!userDetails) {
+		  return res.json({ message: 'no-users' });
+		}
+		res.json(userDetails);
+	  })
+	  .catch(err => res.status(400).json('Error: ' + err));
+  });
+
 router.route('/get-user-by-id/:id').get((req, res) => {
 	User.find({ _id: req.params.id })
 		.then(items => res.json(items))
